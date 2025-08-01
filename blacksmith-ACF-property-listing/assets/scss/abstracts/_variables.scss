@@ -1,0 +1,84 @@
+// generate fonts Inter menium var
+
+// =======================
+// Colors
+// =======================
+$color-bg:            white;
+$color-card-bg:       #ECECEC;
+$color-border:        rgba(0, 0, 0, 0); // Transparent
+$color-text:          black;
+$color-muted:         #888;
+$color-accent:        #F2F2F2;
+$color-primary:       black;
+
+// =======================
+// Typography
+// =======================
+$font-main:           'Inter', sans-serif;
+
+// Font Sizes
+$font-size-base:              1rem;
+$font-size-title:             2rem;
+$font-size-title-lg:          3.125rem;
+$font-size-title-xl:          3.75rem;
+
+$font-size-card-title:        1.3rem;
+$font-size-card-title-lg:     2rem;
+$font-size-card-title-xl:     2rem;
+
+$font-size-card-excerpt:      1rem;
+$font-size-card-excerpt-lg:   1.625rem;
+$font-size-card-excerpt-xl:   1.25rem;
+
+$font-size-card-price:        1.2rem;
+$font-size-card-price-lg:     2.1875rem;
+$font-size-card-price-xl:     1.25rem;
+
+$font-size-card-location:     1rem;
+$font-size-card-location-lg:  1.5625rem;
+$font-size-card-location-xl:  20px;
+
+// Font Weights (Inter)
+$inter-font-weight-medium:    500;
+$inter-font-weight-semibold:  600;
+$inter-font-weight-bold:      700;
+
+// =======================
+// Spacing
+// =======================
+$spacing-xs:          5px;
+$spacing-sm:         10px;
+$spacing-md:         15px;
+$spacing-lg:         20px; // Listing content
+$spacing-xl:         20px;
+
+// =======================
+// Border Radius
+// =======================
+$radius-card:         5px;
+$radius-image-small:  2px;
+
+// =======================
+// Card & Image Sizes
+// =======================
+$card-width-md:           442px;
+$card-width-lg:           482px;
+
+$card-image-height:       200px;
+$card-image-height-md:    190px;
+$card-image-height-lg:    250px;
+
+$card-width-image-md:     300px;
+$card-width-image-lg:     440px;
+
+// =======================
+// Grid & Paginator
+// =======================
+$grid-gap:                20px;
+
+$paginator-btn-size:      50px;
+$paginator-icon-size:     24px;
+
+
+
+
