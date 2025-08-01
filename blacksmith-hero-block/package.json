@@ -1,0 +1,36 @@
+{
+  "name": "blacksmith-hero-block",
+  "version": "1.0.0",
+  "description": "Independent ACF Hero Block with video background support",
+  "main": "gulpfile.js",
+  "scripts": {
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "dev": "gulp dev",
+    "production": "gulp production"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.69.5",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-notify": "^4.0.0",
+    "browser-sync": "^2.29.3"
+  },
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "gutenberg",
+    "acf",
+    "hero",
+    "video"
+  ],
+  "author": "Blacksmith",
+  "license": "GPL-2.0+"
+}

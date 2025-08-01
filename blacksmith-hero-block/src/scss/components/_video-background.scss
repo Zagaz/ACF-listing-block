@@ -1,0 +1,69 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.blacksmith-hero__video-background {
+    @include absolute-cover;
+    z-index: $z-video-background;
+    overflow: hidden;
+
+    iframe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include video-scale;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        border: none;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+
+        // Aspect ratio optimizations
+        @include aspect-ratio-16-9 {
+            width: 100vw;
+            height: calc(100vw * 9 / 16);
+            min-height: 100vh;
+            min-width: 100vw;
+        }
+
+        @include aspect-ratio-not-16-9 {
+            width: calc(100vh * 16 / 9);
+            height: 100vh;
+            min-width: 100vw;
+            min-height: 100vh;
+        }
+
+        // Mobile optimizations
+        @include tablet-only {
+            @include video-scale(100vw, 100vh, 200px);
+        }
+
+        @include mobile-only {
+            @include video-scale(100vw, 100vh, 100px);
+        }
+    }
+}
+
+// Video states
+.blacksmith-hero-wrapper.video-loading .blacksmith-hero__video-background iframe {
+    opacity: 0;
+}
+
+.blacksmith-hero-wrapper.video-loaded .blacksmith-hero__video-background iframe {
+    opacity: 1;
+}
+
+.blacksmith-hero-wrapper.video-error .blacksmith-hero__video-background {
+    display: none;
+}
+
+.blacksmith-hero__video-overlay {
+    @include absolute-cover;
+    background-color: rgba($black, 0.4);
+    z-index: $z-video-overlay;
+}
+
+.blacksmith-hero__video-preview {
+    @include absolute-cover;
+    background: $video-preview-gradient;
+    z-index: $z-video-background;
+}

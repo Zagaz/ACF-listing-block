@@ -1,0 +1,93 @@
+@use 'variables' as *;
+
+// Responsive breakpoints
+@mixin mobile-only {
+    @media (max-width: #{$breakpoint-mobile}) {
+        @content;
+    }
+}
+
+@mixin tablet-only {
+    @media (max-width: #{$breakpoint-tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop-up {
+    @media (min-width: #{$breakpoint-desktop}) {
+        @content;
+    }
+}
+
+@mixin tablet-up {
+    @media (min-width: #{$breakpoint-tablet + 1px}) {
+        @content;
+    }
+}
+
+// Font styling
+@mixin font($family: $font-family-primary, $weight: $font-weight-regular, $size: 1rem) {
+    font-family: $family;
+    font-weight: $weight;
+    font-size: $size;
+}
+
+// Absolute positioning for full coverage
+@mixin absolute-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+// Flexbox centering
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Video background scaling
+@mixin video-scale($width: 100vw, $height: 100vh, $extra: 400px) {
+    width: calc(#{$width} + #{$extra});
+    height: calc(#{$height} + #{$extra});
+    min-width: calc(#{$width} + #{$extra});
+    min-height: calc(#{$height} + #{$extra});
+}
+
+// Text shadow for video overlays
+@mixin text-shadow($shadow: $shadow-text) {
+    text-shadow: $shadow;
+}
+
+// Button styling
+@mixin button-style($bg-color: $primary-color, $text-color: $white) {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: $border-radius-md;
+    text-decoration: none;
+    font-weight: $font-weight-medium;
+    background-color: $bg-color;
+    color: $text-color;
+    transition: $transition-medium;
+    cursor: pointer;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-medium;
+    }
+}
+
+// Aspect ratio utilities
+@mixin aspect-ratio-16-9 {
+    @media (min-aspect-ratio: 16/9) {
+        @content;
+    }
+}
+
+@mixin aspect-ratio-not-16-9 {
+    @media (max-aspect-ratio: 16/9) {
+        @content;
+    }
+}

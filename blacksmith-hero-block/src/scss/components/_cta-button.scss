@@ -1,0 +1,27 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.blacksmith-hero__cta {
+    @include flex-center;
+}
+
+.blacksmith-hero__cta-link {
+    @include button-style;
+    white-space: nowrap;
+    
+    // Hover states
+    &:hover {
+        text-decoration: none;
+    }
+
+    // Disabled state styling
+    &[style*="background-color: #cccccc"] {
+        cursor: not-allowed;
+        opacity: 0.7;
+        
+        &:hover {
+            transform: none;
+            box-shadow: none;
+        }
+    }
+}

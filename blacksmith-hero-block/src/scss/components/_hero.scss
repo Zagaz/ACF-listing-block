@@ -1,0 +1,125 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.blacksmith-hero-wrapper {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    height: $hero-height-default;
+    position: relative;
+    font-family: $font-family-primary;
+
+    // Background Types
+    &.hero-bg-none {
+        background-color: $gray-light;
+    }
+
+    &.hero-bg-image {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &.hero-bg-video {
+        height: $hero-height-desktop;
+        overflow: hidden;
+
+        @include tablet-only {
+            height: $hero-height-tablet;
+        }
+
+        @include mobile-only {
+            height: $hero-height-mobile;
+        }
+    }
+
+    // Content Structure
+    &__content {
+        width: 100%;
+        height: 100%;
+        @include flex-center;
+        position: relative;
+        z-index: $z-content;
+    }
+
+    &__container {
+        width: 90%;
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: $spacing-md;
+
+        @include tablet-up {
+            width: 80%;
+        }
+
+        @include desktop-up {
+            width: 70%;
+        }
+    }
+
+    // Typography
+    &__title {
+        @include font($font-family-primary, $font-weight-semibold, 2.5rem);
+        line-height: 1.2;
+        margin: 0;
+
+        @include tablet-only {
+            font-size: 1.8rem;
+        }
+
+        @include mobile-only {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__subtitle {
+        @include font($font-family-primary, $font-weight-regular, 1.2rem);
+        line-height: 1.5;
+        margin: 0;
+
+        @include tablet-only {
+            font-size: 1rem;
+        }
+
+        @include mobile-only {
+            font-size: 0.9rem;
+        }
+    }
+
+    // Video Background Specific Styling
+    &.hero-bg-video {
+        .blacksmith-hero__container {
+            color: $white;
+            position: relative;
+            z-index: 4; // Ensure content is above everything
+        }
+
+        .blacksmith-hero__title {
+            @include text-shadow;
+            color: $white !important;
+        }
+
+        .blacksmith-hero__subtitle {
+            @include text-shadow($shadow-text-light);
+            color: $white !important;
+        }
+    }
+
+    // CTA Button
+    &__cta-link {
+        @include button-style;
+    }
+
+    // Block Editor Specific
+    .wp-block-editor & {
+        &.hero-bg-video {
+            min-height: 400px;
+        }
+    }
+}
